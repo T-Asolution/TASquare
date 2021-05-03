@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title th:text="#{content.appName}">title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style>
+		body{
+			background-color : #DDFFFF;
+		}
+		.header_div{
+			background-color : #75A9FF !important;
+		}
+		.header_ul{
+			display: flex;
+			list-style: none;
+		}
+		.header_li:last-child{
+			margin-left: auto;
+		}
+		.header_li{
+			border-left: 1px solid #333;
+			border-right: 1px solid #333;
+			padding : 0 10px;
+		}
+		.header_li+.header_li{
+			border-left: 0;
+			border-right: 1px solid #333;
+		}
+		.project_info{
+			width : 40%;
+			border : thin solid #C0C0C0;
+			margin : 20px;
+			display : inline-block;
+		}
+		.project_all{
+			margin-left : 10%;
+		}
+		.my_project_img{
+			width : 20px;
+			height : 20px;
+		}
+		.project_name{
+			font-weight : bold;
+			font-size : xx-large;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- ヘッダー -->
+	<header>
+		<div class="header_div">
+			<ul class="header_ul">
+				<li th:text="#{content.toolProject}" class="header_li">tool1</li>
+				<li th:text="#{content.toolMyPage}" class="header_li">tool2</li>
+				<li th:text="#{content.toolLogin}" class="header_li">tool3</li>
+			</ul>
+		</div>
+	</header>
+	
+	<div class="project_all">
+		<div class="project_info">
+			<a href="/"><p class="project_name">TASquare開発<img class="my_project_img" th:src="@{/img/star.png}"></p></a>
+			<p>TASquare開発プロジェクトです</p>
+		</div>
+		<div class="project_info">
+			<a href="/"><p class="project_name">EarthLink 開発案件</p></a>
+			<p>EarthLink様開発案件について一括で本プロジェクトで管理します</p>
+		</div>
+		<div class="project_info">
+			<a href="/"><p class="project_name">Fleekdrive保守<img class="my_project_img" th:src="@{/img/star.png}"></p></a>
+			<p></p>
+		</div>
+		<div class="project_info">
+			<a href="/"><p class="project_name">個人開発</p></a>
+			<p>プライベート用開発タスク管理プロジェクト</p>
+		</div>
+		<div class="project_info">
+			<a href="/"><p class="project_name">会社HP切り替えプロジェクト</p></a>
+			<p>WordPressを用いたHPを作成</p>
+		</div>
+	</div>
+	
+</body>
+
+</html>
