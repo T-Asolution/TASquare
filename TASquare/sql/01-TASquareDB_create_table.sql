@@ -17,7 +17,7 @@ CREATE TABLE status (
     status_id       serial,                 -- ステータスID
     status_name     varchar(20) NOT NULL,   -- 状態名（新規、進行中、終了など）
     progress_rate   smallint    NOT NULL,   -- 進捗率
-    end_flag        boolean     NOT NULL,   -- 終了フラグ
+    closed_flag        boolean     NOT NULL,   -- 終了フラグ
     PRIMARY KEY(status_id)
 );
 
@@ -56,6 +56,7 @@ CREATE TABLE ticket (
     ticket_id       serial,                 -- チケットID
     tracker_id      integer     NOT NULL    references tracker(tracker_id),   -- トラッカー（外部キー[tracker:tracker_id]）
     project_id      integer     NOT NULL    references project(project_id),   -- プロジェクト（外部キー[project:project_id]）
+    description     varchar(1000),          -- チケット説明
     status_id       integer     NOT NULL    references status(status_id),     -- ステータス（外部キー[status:status_id]）
     assigned_to_id  varchar(40)             references user_info(user_id),    -- 担当者（外部キー[user_info:user_id]）
     priority_id     integer     NOT NULL    references priority(priority_id), -- 優先度（外部キー[priority:priority_id]）
