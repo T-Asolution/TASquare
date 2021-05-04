@@ -3,7 +3,7 @@ body{
 }
 .project_info{
 	width : 40%;
-	border : thin solid #C0C0C0;
+	border : thin dotted #C0C0C0;
 	margin : 20px;
 	display : inline-block;
 }

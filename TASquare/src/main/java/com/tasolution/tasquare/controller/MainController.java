@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class mainController {
+public class MainController {
 
 	@RequestMapping("/")
 	public ModelAndView index(ModelAndView mav) {
@@ -16,6 +16,12 @@ public class mainController {
 	@RequestMapping("/project")
 	public ModelAndView project(ModelAndView mav) {
 		mav.setViewName("project");
+		return mav;
+	}
+	
+	@RequestMapping("/ticketList")
+	public ModelAndView ticketList(ModelAndView mav) {
+		mav.setViewName("ticketList");
 		return mav;
 	}
 }
