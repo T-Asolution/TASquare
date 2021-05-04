@@ -1,10 +1,12 @@
 package com.tasolution.tasquare.model.entity;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -29,6 +31,20 @@ public class UserInfo {
 
 	@Column(name = "update_date")
 	private Timestamp updateDate;
+
+	@OneToMany
+    List<Member> member;
+	
+	@OneToMany
+    List<Ticket> ticket;
+	
+	public List<Ticket> getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(List<Ticket> ticket) {
+		this.ticket = ticket;
+	}
 
 	public String getUserId() {
 		return userId;
@@ -76,6 +92,14 @@ public class UserInfo {
 
 	public void setUpdateDate(Timestamp updateDate) {
 		this.updateDate = updateDate;
+	}
+	
+	public List<Member> getMember() {
+		return member;
+	}
+
+	public void setMember(List<Member> member) {
+		this.member = member;
 	}
 
 }

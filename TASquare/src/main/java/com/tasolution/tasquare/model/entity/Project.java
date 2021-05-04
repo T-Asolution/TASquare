@@ -3,11 +3,15 @@ package com.tasolution.tasquare.model.entity;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="project")
 public class Project {
 
 	@Id
@@ -23,6 +27,9 @@ public class Project {
 
 	@OneToMany
     List<Version> version;
+
+	@OneToMany
+    List<Member> member;
 
 	public int getProjectId() {
 		return projectId;
@@ -54,5 +61,13 @@ public class Project {
 
 	public void setVersion(List<Version> version) {
 		this.version = version;
+	}
+	
+	public List<Member> getMember() {
+		return member;
+	}
+
+	public void setMember(List<Member> member) {
+		this.member = member;
 	}
 }
