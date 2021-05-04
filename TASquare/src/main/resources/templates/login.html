@@ -4,71 +4,8 @@
 <head>
 	<title th:text="#{content.appName}">title</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<style>
-		body{
-			background-color : #DDFFFF;
-		}
-		.header_div{
-			background-color : #75A9FF !important;
-		}
-		.header_ul{
-			display: flex;
-			list-style: none;
-		}
-		.header_li:last-child{
-			margin-left: auto;
-		}
-		.header_li{
-			border-left: 1px solid #333;
-			border-right: 1px solid #333;
-			padding : 0 10px;
-		}
-		.header_li+.header_li{
-			border-left: 0;
-			border-right: 1px solid #333;
-		}
-        #loginForm {
-            border: 1px solid #ccc;
-            padding: 10px;
-            font-size: 13px;
-            font-family: sans-serif;
-        }
-        #loginForm .item {
-            border: 1px solid black;
-            display: block;
-            overflow: hidden;
-            margin-bottom: 10px;
-            width:30%;
-            margin : 0 auto;
-        }
-        #loginForm .item.no-label {
-            padding: 5px 0px 5px 60px;
-        }
-        #loginForm .item .label {
-            float: left;
-            padding: 5px;
-            margin:0;
-        }
-        #loginForm .item{
-            padding: 5px 0px 5px 60px;
-        }
-        #loginForm .item input[type=text],
-        #loginForm .item input[type=password]{
-            display: block;
-            width: 200px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            font-size: 13px;
-            text-align : left !important;
-        }
-        #loginForm .item ::placeholder {
-            color: #ccc;
-        }
-        button {
-            
-        }
-	</style>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/header.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
 </head>
 
 <body>
@@ -76,9 +13,9 @@
 	<header>
 		<div class="header_div">
 			<ul class="header_ul">
-				<li th:text="#{content.toolProject}" class="header_li">tool1</li>
-				<li th:text="#{content.toolMyPage}" class="header_li">tool2</li>
-				<li th:text="#{content.toolLogin}" class="header_li">tool3</li>
+				<li class="header_li"><a href="/project"  th:text="#{content.toolProject}">tool1</a></li>
+				<li class="header_li"><a href="/project"  th:text="#{content.toolMyPage}">tool2</a></li>
+				<li class="header_li"><a href="/"  th:text="#{content.toolLogin}">tool3</a></li>
 			</ul>
 		</div>
 	</header>

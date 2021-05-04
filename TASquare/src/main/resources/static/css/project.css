@@ -1,0 +1,20 @@
+body{
+	background-color : #DDFFFF;
+}
+.project_info{
+	width : 40%;
+	border : thin solid #C0C0C0;
+	margin : 20px;
+	display : inline-block;
+}
+.project_all{
+	margin-left : 10%;
+}
+.my_project_img{
+	width : 20px;
+	height : 20px;
+}
+.project_name{
+	font-weight : bold;
+	font-size : xx-large;
+}

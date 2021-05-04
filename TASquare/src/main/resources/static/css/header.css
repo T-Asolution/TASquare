@@ -1,0 +1,19 @@
+.header_div{
+	background-color : #75A9FF !important;
+}
+.header_ul{
+	display: flex;
+	list-style: none;
+}
+.header_li:last-child{
+	margin-left: auto;
+}
+.header_li{
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+	padding : 0 10px;
+}
+.header_li+.header_li{
+	border-left: 0;
+	border-right: 1px solid #333;
+}
