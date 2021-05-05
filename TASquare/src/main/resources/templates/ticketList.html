@@ -10,15 +10,7 @@
 
 <body>
 	<!-- ヘッダー -->
-	<header>
-		<div class="header_div">
-			<ul class="header_ul">
-				<li class="header_li"><a href="/project" th:text="#{content.toolProject}">tool1</a></li>
-				<li class="header_li"><a href="/project" th:text="#{content.toolMyPage}">tool2</a></li>
-				<li class="header_li"><a href="/" th:text="#{content.toolLogin}">tool3</a></li>
-			</ul>
-		</div>
-	</header>
+	<header th:include="header"></header>
 	
 	<div>
 		<p class="project_name">TASquare開発</p>
