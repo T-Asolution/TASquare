@@ -1,9 +1,12 @@
 package com.tasolution.tasquare.model.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 public class Tracker {
 
@@ -15,6 +18,17 @@ public class Tracker {
 	@Column(name = "tracker_name")
 	private String trackerName;
 
+	public List<Ticket> getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(List<Ticket> ticket) {
+		this.ticket = ticket;
+	}
+
+	@OneToMany
+    private List<Ticket> ticket;
+	
 	public int getTrackerId() {
 		return trackerId;
 	}

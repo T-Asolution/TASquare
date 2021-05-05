@@ -26,10 +26,21 @@ public class Project {
 	private String description;
 
 	@OneToMany
-    List<Version> version;
+    private List<Version> version;
+
+	public List<Ticket> getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(List<Ticket> ticket) {
+		this.ticket = ticket;
+	}
 
 	@OneToMany
-    List<Member> member;
+    private List<Member> member;
+	
+	@OneToMany
+    private List<Ticket> ticket;
 
 	public int getProjectId() {
 		return projectId;

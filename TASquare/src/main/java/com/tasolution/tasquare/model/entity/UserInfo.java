@@ -33,10 +33,10 @@ public class UserInfo {
 	private Timestamp updateDate;
 
 	@OneToMany
-    List<Member> member;
+    private List<Member> member;
 	
 	@OneToMany
-    List<Ticket> ticket;
+	private List<Ticket> ticket;
 	
 	public List<Ticket> getTicket() {
 		return ticket;

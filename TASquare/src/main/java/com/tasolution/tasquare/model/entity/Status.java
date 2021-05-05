@@ -1,10 +1,13 @@
 package com.tasolution.tasquare.model.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +27,17 @@ public class Status {
 	
 	@Column(name = "closed_flag")
 	private boolean closedFlag;
+
+	@OneToMany
+    private List<Ticket> ticket;
+	
+	public List<Ticket> getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(List<Ticket> ticket) {
+		this.ticket = ticket;
+	}
 
 	public int getStatusId() {
 		return statusId;
