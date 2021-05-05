@@ -46,5 +46,4 @@ public class Member {
 	public void setProject(Project project) {
 		this.project = project;
 	}
-	
 }

@@ -20,11 +20,11 @@ public class Version {
 	@Column(name = "version_id")
 	private int versionId;
 
-	@Column(name = "version_name")
-	private String versionName;
-
 	@ManyToOne
 	private Project project;
+	
+	@Column(name = "version_name")
+	private String versionName;
 
 	@OneToMany
     private List<Ticket> ticket;
@@ -33,16 +33,16 @@ public class Version {
 		return versionId;
 	}
 
-	public List<Ticket> getTicket() {
-		return ticket;
-	}
-
-	public void setTicket(List<Ticket> ticket) {
-		this.ticket = ticket;
-	}
-
 	public void setVersionId(int versionId) {
 		this.versionId = versionId;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
 	}
 
 	public String getVersionName() {
@@ -53,11 +53,11 @@ public class Version {
 		this.versionName = versionName;
 	}
 
-	public Project getProject() {
-		return project;
+	public List<Ticket> getTicket() {
+		return ticket;
 	}
 
-	public void setProject(Project project) {
-		this.project = project;
+	public void setTicket(List<Ticket> ticket) {
+		this.ticket = ticket;
 	}
 }

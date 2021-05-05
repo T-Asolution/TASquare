@@ -28,14 +28,6 @@ public class Project {
 	@OneToMany
     private List<Version> version;
 
-	public List<Ticket> getTicket() {
-		return ticket;
-	}
-
-	public void setTicket(List<Ticket> ticket) {
-		this.ticket = ticket;
-	}
-
 	@OneToMany
     private List<Member> member;
 	
@@ -73,12 +65,20 @@ public class Project {
 	public void setVersion(List<Version> version) {
 		this.version = version;
 	}
-	
+
 	public List<Member> getMember() {
 		return member;
 	}
 
 	public void setMember(List<Member> member) {
 		this.member = member;
+	}
+
+	public List<Ticket> getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(List<Ticket> ticket) {
+		this.ticket = ticket;
 	}
 }

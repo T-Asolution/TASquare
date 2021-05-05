@@ -3,52 +3,57 @@ package com.tasolution.tasquare.model.entity;
 import java.sql.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "ticket")
 public class Ticket {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ticket_id")
 	private int ticketId;
-	
-	@Column(name = "description")
-	private String description;
-	
-	@Column(name = "regist_date")
-	private Date registDate;
-	
-	@Column(name = "update_date")
-	private Date updateDate;
-	
-	@Column(name = "start_date")
-	private Date startDate;
-	
-	@Column(name = "estimated_hours")
-	private int estimatedHours;
-	
+
 	@ManyToOne
 	private Tracker tracker;
-	
+
 	@ManyToOne
 	private Project project;
-	
+
+	@Column(name = "description")
+	private String description;
+
 	@ManyToOne
 	private Status status;
-	
+
 	@ManyToOne
-	private UserInfo user_info1;
-	
+	private UserInfo assignedToUserd;
+
 	@ManyToOne
 	private Priority priority;
-	
+
 	@ManyToOne
 	private Version version;
-	
+
 	@ManyToOne
-	private UserInfo user_info2;
+	private UserInfo author;
+
+	@Column(name = "regist_date")
+	private Date registDate;
+
+	@Column(name = "update_date")
+	private Date updateDate;
+
+	@Column(name = "start_date")
+	private Date startDate;
+
+	@Column(name = "estimated_hours")
+	private int estimatedHours;
 
 	public int getTicketId() {
 		return ticketId;
@@ -58,12 +63,68 @@ public class Ticket {
 		this.ticketId = ticketId;
 	}
 
+	public Tracker getTracker() {
+		return tracker;
+	}
+
+	public void setTracker(Tracker tracker) {
+		this.tracker = tracker;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
 	public String getDescription() {
 		return description;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+	public UserInfo getAssignedToUserd() {
+		return assignedToUserd;
+	}
+
+	public void setAssignedToUserd(UserInfo assignedToUserd) {
+		this.assignedToUserd = assignedToUserd;
+	}
+
+	public Priority getPriority() {
+		return priority;
+	}
+
+	public void setPriority(Priority priority) {
+		this.priority = priority;
+	}
+
+	public Version getVersion() {
+		return version;
+	}
+
+	public void setVersion(Version version) {
+		this.version = version;
+	}
+
+	public UserInfo getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(UserInfo author) {
+		this.author = author;
 	}
 
 	public Date getRegistDate() {
@@ -97,62 +158,4 @@ public class Ticket {
 	public void setEstimatedHours(int estimatedHours) {
 		this.estimatedHours = estimatedHours;
 	}
-
-	public Tracker getTracker() {
-		return tracker;
-	}
-
-	public void setTracker(Tracker tracker) {
-		this.tracker = tracker;
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
-
-	public Status getStatus() {
-		return status;
-	}
-
-	public void setStatus(Status status) {
-		this.status = status;
-	}
-
-	public UserInfo getUser_info1() {
-		return user_info1;
-	}
-
-	public void setUser_info1(UserInfo user_info1) {
-		this.user_info1 = user_info1;
-	}
-
-	public Priority getPriority() {
-		return priority;
-	}
-
-	public void setPriority(Priority priority) {
-		this.priority = priority;
-	}
-
-	public Version getVersion() {
-		return version;
-	}
-
-	public void setVersion(Version version) {
-		this.version = version;
-	}
-
-	public UserInfo getUser_info2() {
-		return user_info2;
-	}
-
-	public void setUser_info2(UserInfo user_info2) {
-		this.user_info2 = user_info2;
-	}
-
-	
 }

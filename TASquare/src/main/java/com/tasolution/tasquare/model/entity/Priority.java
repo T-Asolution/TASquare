@@ -1,10 +1,13 @@
 package com.tasolution.tasquare.model.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +21,9 @@ public class Priority {
 
 	@Column(name = "priority_type")
 	private String priorityType;
+
+	@OneToMany
+    private List<Ticket> ticket;
 
 	public int getPriorityId() {
 		return priorityId;
@@ -33,5 +39,13 @@ public class Priority {
 
 	public void setPriorityType(String priorityType) {
 		this.priorityType = priorityType;
+	}
+
+	public List<Ticket> getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(List<Ticket> ticket) {
+		this.ticket = ticket;
 	}
 }

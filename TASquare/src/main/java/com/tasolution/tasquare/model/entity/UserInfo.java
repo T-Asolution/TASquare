@@ -36,15 +36,10 @@ public class UserInfo {
     private List<Member> member;
 	
 	@OneToMany
-	private List<Ticket> ticket;
-	
-	public List<Ticket> getTicket() {
-		return ticket;
-	}
+	private List<Ticket> assignedTicket;
 
-	public void setTicket(List<Ticket> ticket) {
-		this.ticket = ticket;
-	}
+	@OneToMany
+	private List<Ticket> createTicket;
 
 	public String getUserId() {
 		return userId;
@@ -93,7 +88,7 @@ public class UserInfo {
 	public void setUpdateDate(Timestamp updateDate) {
 		this.updateDate = updateDate;
 	}
-	
+
 	public List<Member> getMember() {
 		return member;
 	}
@@ -102,4 +97,19 @@ public class UserInfo {
 		this.member = member;
 	}
 
+	public List<Ticket> getAssignedTicket() {
+		return assignedTicket;
+	}
+
+	public void setAssignedTicket(List<Ticket> assignedTicket) {
+		this.assignedTicket = assignedTicket;
+	}
+
+	public List<Ticket> getCreateTicket() {
+		return createTicket;
+	}
+
+	public void setCreateTicket(List<Ticket> createTicket) {
+		this.createTicket = createTicket;
+	}
 }
