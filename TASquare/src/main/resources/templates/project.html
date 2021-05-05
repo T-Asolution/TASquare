@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title th:text="#{content.appName}">title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/header.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/project.css}" />
+</head>
+
+<body>
+	<!-- ヘッダー -->
+	<header th:include="header"></header>
+	
+	<div class="project_all">
+		<div class="project_info">
+			<a href="/ticketList"><p class="project_name">TASquare開発<img class="my_project_img" th:src="@{/img/star.png}"></p></a>
+			<p>TASquare開発プロジェクトです</p>
+		</div>
+		<div class="project_info">
+			<a href="/ticketList"><p class="project_name">EarthLink 開発案件</p></a>
+			<p>EarthLink様開発案件について一括で本プロジェクトで管理します</p>
+		</div>
+		<div class="project_info">
+			<a href="/ticketList"><p class="project_name">Fleekdrive保守<img class="my_project_img" th:src="@{/img/star.png}"></p></a>
+			<p></p>
+		</div>
+		<div class="project_info">
+			<a href="/ticketList"><p class="project_name">個人開発</p></a>
+			<p>プライベート用開発タスク管理プロジェクト</p>
+		</div>
+		<div class="project_info">
+			<a href="/ticketList"><p class="project_name">会社HP切り替えプロジェクト</p></a>
+			<p>WordPressを用いたHPを作成</p>
+		</div>
+	</div>
+	
+</body>
+
+</html>

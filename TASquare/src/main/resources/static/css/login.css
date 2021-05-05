@@ -1,0 +1,41 @@
+body{
+	background-color : #DDFFFF;
+}
+#loginForm {
+	border: 1px solid #ccc;
+	padding: 10px;
+	font-size: 13px;
+	font-family: sans-serif;
+}	
+#loginForm .item {
+	border: 1px solid black;
+	display: block;
+	overflow: hidden;
+	margin-bottom: 10px;
+	width:30%;
+	margin : 0 auto;
+}
+#loginForm .item.no-label {
+	padding: 5px 0px 5px 60px;
+}
+#loginForm .item .label {
+	float: left;
+	padding: 5px;
+	margin:0;
+}
+#loginForm .item{
+	padding: 5px 0px 5px 60px;
+}
+#loginForm .item input[type=text],
+#loginForm .item input[type=password]{
+	display: block;
+	width: 200px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	font-size: 13px;
+	text-align : left !important;
+}
+#loginForm .item ::placeholder {
+	color: #ccc;
+}

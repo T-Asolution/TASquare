@@ -1,0 +1,15 @@
+body{
+	background-color : #DDFFFF;
+}
+.project_name{
+	font-weight : bold;
+	font-size : xx-large;
+}
+#ticket_List_table{
+	border : thin solid #C0C0C0;
+	border-collapse: collapse;
+	background-color : #FFFFFF;
+}
+#ticket_List_table th,#ticket_List_table td{
+	border : thin solid #C0C0C0;
+}
